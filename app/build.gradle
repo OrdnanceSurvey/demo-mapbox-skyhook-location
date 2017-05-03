@@ -14,6 +14,7 @@ android {
     buildTypes {
         debug {
             buildConfigField "String", "MAPBOX_SDK_TOKEN", "\"pk.your-mapbox-api-key\""
+            buildConfigField "String", "SKYHOOK_SDK_TOKEN", "\"pk.your-skyhook-api-key\""
         }
         release {
             minifyEnabled false
@@ -32,6 +33,8 @@ dependencies {
     compile ('com.mapbox.mapboxsdk:mapbox-android-sdk:5.1.0-SNAPSHOT@aar') {
         transitive=true
     }
+    compile 'io.reactivex.rxjava2:rxjava:2.0.9'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     testCompile 'junit:junit:4.12'
 }
 
