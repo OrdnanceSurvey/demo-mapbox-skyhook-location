@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">mapbox-skyhook-location</string>
+    <string name="log_messages">LOG MESSAGES</string>
 </resources>
