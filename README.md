@@ -1,2 +1,4 @@
 # mapbox-skyhook-location
-demo code
+Basic demo to showing Skyhook location on a Mapbox map.
+
+![](screenshot_small.png)
