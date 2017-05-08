@@ -81,6 +81,13 @@ public class SkyhookLocationEngine extends LocationEngine {
     @Override
     public void requestLocationUpdates() {
         Log.d(LOG_TAG, "requestLocationUpdates");
+
+        boolean isExistingSubscription = locationSubscription != null;
+        if (isExistingSubscription) {
+            Log.d(LOG_TAG, "removeLocationUpdates: ignore request as already subscription");
+            return;
+        }
+
         locationSubscription =
                 SkyhookLocationStreams.getLocationStream()
                         .subscribeOn(Schedulers.newThread())
@@ -116,6 +123,10 @@ public class SkyhookLocationEngine extends LocationEngine {
     @Override
     public void removeLocationUpdates() {
         Log.d(LOG_TAG, "removeLocationUpdates");
+        if (locationSubscription == null) {
+            Log.d(LOG_TAG, "removeLocationUpdates: no subscription so ignoring");
+            return;
+        }
         locationSubscription.dispose();
         locationSubscription = null;
     }

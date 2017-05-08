@@ -115,7 +115,8 @@ public class SkyhookLocationStreams {
         });
     }
 
-    private static void foreverCertifiedLocation(XPS mXps, final ObservableEmitter<Location> emitter) {
+    private static void foreverCertifiedLocation(XPS mXps,
+                                                 final ObservableEmitter<Location> emitter) {
         for (;;) {
             // if subscribers finished then we exit
             boolean isFinished = emitter.isDisposed();
@@ -124,7 +125,8 @@ public class SkyhookLocationStreams {
             }
 
             final CountDownLatch countDownLatch = new CountDownLatch(1);
-            mXps.getCertifiedLocation(null, WPSStreetAddressLookup.WPS_NO_STREET_ADDRESS_LOOKUP, new WPSCertifiedLocationCallback() {
+            mXps.getCertifiedLocation(null, WPSStreetAddressLookup.WPS_NO_STREET_ADDRESS_LOOKUP,
+                    new WPSCertifiedLocationCallback() {
                 @Override
                 public WPSContinuation handleWPSCertifiedLocation(WPSLocation[] wpsLocations) {
                     emitter.onNext(toAndroidLocation(wpsLocations[0]));

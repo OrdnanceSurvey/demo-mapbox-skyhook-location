@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">mapbox-skyhook-location</string>
-    <string name="log_messages">LOG MESSAGES</string>
+    <string name="app_name">Skyhook Location Demo</string>
+    <string name="log_message">%1$d) %2$f %3$f - %4$d</string>
+    <string name="rationale_location">The My Location dot requires your location</string>
+
+    <string name="main_options_menu_logging">Allow logging</string>
+    <string name="main_options_menu_logging_rationale">The Skyhook SDK requires access to read /sdcard/skyhookLog.conf</string>
 </resources>
